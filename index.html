@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+    <title>NaafBOT</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+	<meta charset="utf-8">
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <div id="app">
+        <h2 id="Title">
+            NaafBOT
+        </h2>
+
+        <div id="Chat">
+            <div id="talks" v-for="talk in talks">
+                <div v-if="talk.isBotAnswer == true" id="left">
+                    <p>
+                        {{talk.text}}
+                    </p>
+
+                </div>
+                <div v-else id="right">
+                    <p>
+                        {{talk.text}}
+                    </p>
+                </div>
+            </div>
+            <div id="input_text">
+                <input placeholder="Ask Something" v-model="newText">
+                <button @click="AddText">
+                    Send
+                </button>
+            </div>
+        </div>
+        <script src="index.js"></script>
+    </div>
+</body>
+
+</html>
